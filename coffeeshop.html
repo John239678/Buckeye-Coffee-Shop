@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Buckeyes Brewing Coffee Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+</head>
+<style>
+  button {
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+img {
+  filter: contrast(160%) blur(0%);
+}
+
+h1 {
+  min-height: 100%;
+  background-image: src("1.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 img {
+  width: 100%;
+  height: auto;
+  object-position: top;
+}
+.contact-info {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  color: #C00000;
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+/* Full-screen overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75); /* dark transparent background */
+  display: none; /* hidden until clicked */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Menu box */
+.overlay-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Menu image */
+.menu-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Close button */
+.close-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #C00000; /* your exact red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.menu-btn {
+  position: absolute;
+  bottom: -60px; /* pushes it BELOW the contact info */
+  right: 15px;   /* aligns with contact info */
+  padding: 12px 24px;
+  background-color: #C00000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+</style>
+
+<body>
+<h1>
+  <img src="1.svg" alt="Buckeye Brewing Coffee Shop Menu">
+  <div class="contact-info">
+    New Location<br>
+    678 High Street<br>
+    Marion, Ohio<br>
+    (555) 123‑4567
+    <button class="menu-btn" onclick="openMenu()">Menu</button>
+  </div>
+  </h1>
+    
+
+
+
+<div id="menuOverlay" class="overlay">
+  <div class="overlay-content">
+    <img src="BuckeyeBrewingCoffeeShop.png" alt="Menu" class="menu-image">
+    <button class="close-btn" onclick="closeMenu()">Close</button>
+  </div>
+</div>
+
+<script>
+function openMenu() {
+  document.getElementById("menuOverlay").style.display = "flex";
+}
+
+function closeMenu() {
+  document.getElementById("menuOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
